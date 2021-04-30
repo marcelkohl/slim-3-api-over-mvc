@@ -1,0 +1,45 @@
+version: "3.8"
+services:
+    app:
+        build: .
+        container_name: slim-api
+        working_dir: /var/www/
+        environment:
+            MYSQL_HOST: db
+            MYSQL_PORT: 3306
+            MYSQL_DATABASE: ${DB_DATABASE}
+            MYSQL_USER: ${DB_USERNAME}
+            MYSQL_PASSWORD: ${DB_PASSWORD}
+        volumes:
+            - ./src:/var/www
+
+    db:
+        volumes:
+            - ./sql:/docker-entrypoint-initdb.d
+        image: mysql:8
+        container_name: slim-api-mysql
+        ports:
+            - "13306:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+            MYSQL_DATABASE: ${DB_DATABASE}
+            MYSQL_USER: ${DB_USERNAME}
+            MYSQL_PASSWORD: ${DB_PASSWORD}
+        env_file:
+            - ./.env
+
+    nginx:
+        image: nginx:alpine
+        container_name: slim-api-php-nginx
+        ports:
+            - 18080:80
+        volumes:
+            - ./src:/var/www
+            - ./nginx/conf.d/:/etc/nginx/conf.d/
+
+    composer_installation:
+      container_name: composer_installation
+      image: composer
+      volumes:
+        - ./src:/app
+      command: composer install --ignore-platform-reqs

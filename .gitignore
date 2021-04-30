@@ -1,0 +1,5 @@
+.sonarlint
+vendor
+cache
+logs
+*.cache
