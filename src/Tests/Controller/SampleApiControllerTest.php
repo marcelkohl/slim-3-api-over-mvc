@@ -1,6 +1,9 @@
 <?php
 declare(strict_types = 1);
 
+namespace Tests\Controller;
+
+use Tests\Slim3TestCase;
 use App\Controller\SampleApiController;
 
 class SampleApiControllerTest extends Slim3TestCase

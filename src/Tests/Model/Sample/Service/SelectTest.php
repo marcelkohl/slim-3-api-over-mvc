@@ -1,6 +1,9 @@
 <?php
 declare(strict_types = 1);
 
+namespace Tests\Model\Sample\Service;
+
+use Tests\Slim3TestCase;
 use App\Model\Sample\Service\Select;
 use App\Model\Sample\Dbo\SampleInterface as SampleDboInterface;
 

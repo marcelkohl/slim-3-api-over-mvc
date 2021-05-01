@@ -1,6 +1,9 @@
 <?php
 declare(strict_types = 1);
 
+namespace Tests\Controller;
+
+use Tests\Slim3TestCase;
 use App\Model\Sample\Service\Delete;
 use App\Model\Sample\Dbo\SampleInterface as SampleDboInterface;
 

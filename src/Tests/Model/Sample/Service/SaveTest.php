@@ -1,6 +1,9 @@
 <?php
 declare(strict_types = 1);
 
+namespace Tests\Controller;
+
+use Tests\Slim3TestCase;
 use App\Model\Exception\MissingModelValueException;
 use App\Model\Sample\Service\Save;
 use App\Model\Sample\Dbo\SampleInterface as SampleDboInterface;

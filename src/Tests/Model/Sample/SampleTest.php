@@ -1,6 +1,9 @@
 <?php
 declare(strict_types = 1);
 
+namespace Tests\Model\Sample;
+
+use Tests\Slim3TestCase;
 use App\Model\Sample\Sample;
 
 class SampleTest extends Slim3TestCase
