@@ -1,5 +1,4 @@
-# slim-3-api-over-mvc
-Slim 3 API over MVC pattern
+# PHP Slim Framework v.3 API over MVC pattern
 
 This project implements an API over MVC design pattern.
 One sample model is implemented with the respectives classes for accessing database (DTO) and services.
